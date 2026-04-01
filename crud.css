@@ -1,28 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f4f4;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 0;
 }
 
-h2, h3 {
+h1, h2 {
     text-align: center;
 }
 
 form {
     background: white;
     padding: 20px;
-    width: 300px;
     margin: auto;
+    width: 300px;
     border-radius: 10px;
-    box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-form label {
+label {
     display: block;
     margin-top: 10px;
 }
 
-form input {
+input, select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -30,39 +31,132 @@ form input {
 
 button {
     margin-top: 15px;
-    padding: 10px;
     width: 100%;
-    background: #28a745;
+    padding: 10px;
+    background: #0077ff;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background: #218838;
+    background: #005fcc;
 }
 
 table {
     width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
     border-collapse: collapse;
     background: white;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-}
-
 th, td {
     padding: 10px;
+    border: 1px solid #ddd;
     text-align: center;
 }
 
 button.edit {
     background: orange;
+    margin-right: 5px;
 }
 
 button.delete {
     background: red;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0a2540;
     color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00c3ff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-content p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.hero-content button {
+    padding: 12px 25px;
+    background: #00c3ff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-content button:hover {
+    background: #009edb;
+}
+
+@media(max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0a2540;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
